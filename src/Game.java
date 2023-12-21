@@ -34,25 +34,47 @@ public class Game
      */
     private void createRooms()
     {
-        Room auditoriumLobby, centerWestHallway, centerEastHallway, fortGreenePlace,
-                toNorthWestEntrance, toSouthWestEntrance, auditorium, toNorthEastEntrance,
-                toSouthEastEntrance, southEliot, murral;
+        Room room11, room12, room13, room14, room15,
+            room21, room22, room23, room24, room25,
+            room31, room32, room33, room34, room35,
+            room41, room42, room43, room44, room45,
+            room51, room52, room53, room54, room55;
 
         // create the rooms
-        auditoriumLobby = new Room("in lobby outside the auditorium");
-        centerWestHallway = new Room("in the center west hallway");
-        centerEastHallway = new Room("in the center east hallway");
-        fortGreenePlace = new Room("outside center west on Fort Greene Place");
-        toNorthWestEntrance = new Room("looking toward the north west entrance");
-        toSouthWestEntrance = new Room("looking toard the south west entrance");
-        auditorium = new Room("Auditorium");
-        toNorthEastEntrance = new Room("looking toward the north east entrance");
-        toSouthEastEntrance = new Room("looking toward the south east entrance");
-        southEliot = new Room("outside center east on South Elliot");
-        murral = new Room("at the murral in the lobby");
-        auditorium = new Room("in the auditorium");
+        room11 = new Room("in room on point (1, 1)");
+        room12 = new Room("in room on point (1, 2)");
+        room13 = new Room("in room on point (1, 3)");
+        room14 = new Room("in room on point (1, 4)");
+        room15 = new Room("in room on point (1, 5)");
+        room21 = new Room("in room on point (2, 1)");
+        room22 = new Room("in room on point (2, 2)");
+        room23 = new Room("in room on point (2, 3)");
+        room24 = new Room("in room on point (2, 4)");
+        room25 = new Room("in room on point (2, 5)");
+        room31 = new Room("in room on point (3, 1)");
+        room32 = new Room("in room on point (3, 2)");
+        room33 = new Room("start (3, 3)");
+        room34 = new Room("in room on point (3, 4)");
+        room35 = new Room("in room on point (3, 5)");
+        room41 = new Room("in room on point (4, 1)");
+        room42 = new Room("in room on point (4, 2)");
+        room43 = new Room("in room on point (4, 3)");
+        room44 = new Room("in room on point (4, 4)");
+        room45 = new Room("in room on point (4, 5)");
+        room51 = new Room("in room on point (5, 1)");
+        room52 = new Room("in room on point (5, 2)");
+        room53 = new Room("in room on point (5, 3)");
+        room54 = new Room("in room on point (5, 4)");
+        room55 = new Room("in room on point (5, 5)");
+
 
         // initialise room exits (north, east, south, west)
+        room11.setExits(room12, null, null, null);
+        room12.setExits();
+        room13.setExits();
+        room14.setExits();
+        room15.setExits();
+        room21.setExits();
         auditoriumLobby.setExits(murral, centerEastHallway, auditorium, centerWestHallway);
         centerWestHallway.setExits(toNorthWestEntrance, auditoriumLobby, toSouthWestEntrance, fortGreenePlace);
         centerEastHallway.setExits(toNorthEastEntrance, southEliot, toSouthEastEntrance, auditoriumLobby);
