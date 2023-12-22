@@ -41,55 +41,61 @@ public class Game
             room51, room52, room53, room54, room55;
 
         // create the rooms
-        room11 = new Room("in room on point (1, 1)");
+        room11 = new Room("in room on point (1, 1) It's a dead end!");
         room12 = new Room("in room on point (1, 2)");
         room13 = new Room("in room on point (1, 3)");
         room14 = new Room("in room on point (1, 4)");
-        room15 = new Room("in room on point (1, 5)");
-        room21 = new Room("in room on point (2, 1)");
+        room15 = new Room("in room on point (1, 5) It's a dead end!");
+        room21 = new Room("in room on point (2, 1) It's a dead end!");
         room22 = new Room("in room on point (2, 2)");
         room23 = new Room("in room on point (2, 3)");
         room24 = new Room("in room on point (2, 4)");
         room25 = new Room("in room on point (2, 5)");
         room31 = new Room("in room on point (3, 1)");
         room32 = new Room("in room on point (3, 2)");
-        room33 = new Room("start (3, 3)");
+        room33 = new Room("in the center of the maze. Point (3, 3)");
         room34 = new Room("in room on point (3, 4)");
         room35 = new Room("in room on point (3, 5)");
-        room41 = new Room("in room on point (4, 1)");
+        room41 = new Room("in room on point (4, 1) It's a dead end!");
         room42 = new Room("in room on point (4, 2)");
         room43 = new Room("in room on point (4, 3)");
         room44 = new Room("in room on point (4, 4)");
         room45 = new Room("in room on point (4, 5)");
-        room51 = new Room("in room on point (5, 1)");
+        room51 = new Room("in room on point (5, 1) It's a dead end!");
         room52 = new Room("in room on point (5, 2)");
         room53 = new Room("in room on point (5, 3)");
-        room54 = new Room("in room on point (5, 4)");
-        room55 = new Room("in room on point (5, 5)");
+        room54 = new Room("in room on point (5, 4) It's a dead end!");
+        room55 = new Room("in room on point (5, 5) It's a dead end!");
 
 
         // initialise room exits (north, east, south, west)
         room11.setExits(room12, null, null, null);
-        room12.setExits();
-        room13.setExits();
-        room14.setExits();
-        room15.setExits();
-        room21.setExits();
-        auditoriumLobby.setExits(murral, centerEastHallway, auditorium, centerWestHallway);
-        centerWestHallway.setExits(toNorthWestEntrance, auditoriumLobby, toSouthWestEntrance, fortGreenePlace);
-        centerEastHallway.setExits(toNorthEastEntrance, southEliot, toSouthEastEntrance, auditoriumLobby);
+        room12.setExits(room13, room22, room11, null);
+        room13.setExits(room14, room23, room12, null);
+        room14.setExits(null, room24, room13, null);
+        room15.setExits(null, room25, null, null);
+        room21.setExits(null, room31, null, null);
+        room22.setExits(room23, null, null, room12);
+        room23.setExits(room24, null, room22, room13);
+        room24.setExits(room25, room34, room23, room14);
+        room25.setExits(null, null, room24, room15);
+        room31.setExits(room32, room41, null, room21);
+        room32.setExits(room33, room42, room31, null);
+        room33.setExits(null, room43, room32, null);
+        room34.setExits(room35, room44, null, room24);
+        room35.setExits(null, room45, room34, null);
+        room41.setExits(null, null, null, room31);
+        room42.setExits(room43, room52, null, room32);
+        room43.setExits(room44, room53, room42, room33);
+        room44.setExits(room45, room54, room43, room34);
+        room45.setExits(null, room55, room44, room35);
+        room51.setExits(room52, null, null, null);
+        room52.setExits(room53, null, room51, room42);
+        room53.setExits(null, null, room52, room43);
+        room54.setExits(null, null, null, room44);
+        room55.setExits(null, null, null, room45);
 
-        fortGreenePlace.setExits(null, centerWestHallway, null, null);
-        toNorthWestEntrance.setExits(null, null, centerWestHallway, null);
-        toSouthWestEntrance.setExits(centerWestHallway, null, null, null);
-        auditorium.setExits(auditoriumLobby, null, null, null);
-        murral.setExits(null, null, auditoriumLobby, null);
-        southEliot.setExits(null, centerEastHallway, null, null);
-        toNorthEastEntrance.setExits(null, null, centerEastHallway, null);
-        toSouthEastEntrance.setExits(centerEastHallway, null, null, null);
-
-
-        currentRoom = auditoriumLobby;  // start game outside
+        currentRoom = room33;  // start game outside
     }
 
     /**
